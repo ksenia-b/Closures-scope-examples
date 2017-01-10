@@ -2,5 +2,14 @@
  * Created by Ксюша on 10.01.2017.
  */
 
-var a = 5; // объявление var создаёт свойство window.a
-alert( window.a ); // 5
+// На момент инициализации, до выполнения кода:
+// window = { f: function, a: undefined, g: undefined }
+
+var a = 5;
+// window = { f: function, a: 5, g: undefined }
+
+function f(arg) { /*...*/ }
+// window = { f: function, a: 5, g: undefined } без изменений, f обработана ранее
+
+var g = function(arg) { /*...*/ };
+// window = { f: function, a: 5, g: function }
